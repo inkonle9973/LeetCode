@@ -3,7 +3,7 @@ package Days;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
-public class MaxDistance {
+public class MaxDistance3 {
     public static  int maxDistance(int[][] grid) {
         int[] dx = new int[]{0, 0, 1, -1};
         int[] dy = new int[]{1, -1, 0, 0};
