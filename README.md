@@ -200,4 +200,58 @@ private ListNode merge2Lists2(ListNode l, ListNode r) {
 
   
 
+#### [153. 寻找旋转排序数组中的最小值](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/)
+
+假设按照升序排序的数组在预先未知的某个点上进行了旋转。
+
+( 例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] )。
+
+请找出其中最小的元素。
+
+你可以假设数组中不存在重复元素。
+
+。
+**示例1:**
+
+```java
+输入: [3,4,5,1,2]
+输出: 1
+```
+
+**示例2:**
+
+```java
+输入: [4,5,6,7,0,1,2]
+输出: 0
+```
+
+这题看似很简单 但是感觉边界问题值得考虑 应该仔细分析一下
+
+引用题解 [二分查找：为什么左右不对称？只比较mid与right的原因](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/solution/er-fen-cha-zhao-wei-shi-yao-zuo-you-bu-dui-cheng-z/)
+
+
+
+#### [154. 寻找旋转排序数组中的最小值 II](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/)
+
+假设按照升序排序的数组在预先未知的某个点上进行了旋转。
+
+( 例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] )。
+
+请找出其中最小的元素。
+
+注意数组中可能存在重复的元素。
+
+示例 1：
+```java
+输入: [1,3,5]
+输出: 1
+```
+
+
+示例 2：
+```java
+输入: [2,2,2,0,1]
+输出: 0
+```
+
 
