@@ -96,13 +96,13 @@ public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 private ListNode merge2Lists2(ListNode l, ListNode r) {
         ListNode prehead = new ListNode(0);
         ListNode prev = prehead;  
-        //这个太妙了 对Java的数据类型使用的淋漓尽致 Java都是值传递 传递的是此时的地           址，操作的都同一个链表。实现了c++里的指针作用
+//这个太妙了 对Java的数据类型使用的淋漓尽致 Java都是值传递 传递的是此时的地         址，操作的都同一个链表。实现了c++里的指针作用 但是Java不是指针 只是地址
         while (l != null && r != null) {
             if (l.val <= r.val) {
                 prev.next = l;
                 l=l.next;
                 prev = prev.next;
-            } else {
+            } else {	·
                 prev.next = r;
                 r = r.next;
                 prev = prev.next;
@@ -127,6 +127,77 @@ private ListNode merge2Lists2(ListNode l, ListNode r) {
 
 *4.判断时一定要注意先后顺序，如果连杯子（list）都没有，直接判断是否有水（list.size( )）,是会报NullPointerException异常的。*
 
+####  2020/4/27
 
+#### [33. 搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/)
+
+假设按照升序排序的数组在预先未知的某个点上进行了旋转。
+
+( 例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] )。
+
+搜索一个给定的目标值，如果数组中存在这个目标值，则返回它的索引，否则返回 -1 。
+
+你可以假设数组中不存在重复的元素。
+
+你的算法时间复杂度必须是 O(log n) 级别。
+**示例1:**
+
+```
+输入: nums = [4,5,6,7,0,1,2], target = 0
+输出: 4
+```
+
+**示例2:**
+
+```
+输入: nums = [4,5,6,7,0,1,2], target = 3
+输出: -1
+```
+
+
+
+此题Sweetiee提供了两种思路，三种实现方法
+
+**思路一：「旋转数组中找目标值」 转化成了 「有序数组中找目标值」**
+
+* 首先找到数组中的最小值相当于分割点，以此可以分成两个有序数组，然后进行二分查找
+
+* 对于旋转数组 nums = [4,5,6,7,0,1,2]
+  首先根据 nums[0] 与 target 的关系判断 target 是在左段还是右段。
+
+      例如 target = 5, 目标值在左半段，因此在 [4, 5, 6, 7, inf, inf, inf] 这个有序数组里找就行了；
+      例如 target = 1, 目标值在右半段，因此在 [-inf, -inf, -inf, -inf, 0, 1, 2] 这个有序数组里找就行了。
+
+  如此，我们又双叒叕将「旋转数组中找目标值」 转化成了 「有序数组中找目标值」
+
+**思路二：直接对旋转数组进行二分查找**
+
+* 首先复习一下有序数组的二分查找：
+
+  ``` java
+  public int search(int[] nums, int target) {
+      int lo = 0, hi = nums.length - 1, mid = 0;
+      while (lo <= hi) {
+          mid = lo + ((hi - lo) >> 1);
+          if (nums[mid] == target) {
+              return mid;
+          }
+          if (nums[mid] < target) {
+              lo = mid + 1;
+          } else {
+              hi = mid - 1;
+          }
+      }
+      return -1;
+  }
+  ```
+
+  如上述代码所示，我们根据 nums[mid] 与 target 的大小关系，可以得知 target 是在 mid 的左边还是右边，从而来调整左右边界 lo 和 hi。
+
+  但是，对于旋转数组，我们无法直接根据 nums[mid] 与 target 的大小关系来判断 target 是在 mid 的左边还是右边，因此需要「分段讨论」。于是方法三呼之欲出！
+
+  **方法三：先根据 nums[mid] 与 nums[lo] 的关系判断 mid 是在左段还是右段，接下来再判断 target 是在 mid 的左边还是右边，从而来调整左右边界 lo 和 hi。**
+
+  
 
 
