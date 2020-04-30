@@ -254,7 +254,7 @@ private ListNode merge2Lists2(ListNode l, ListNode r) {
 输出: 0
 ```
 
-####  2020/4/27
+####  2020/4/28
 
 #### [56 - I. 数组中数字出现的次数](https://leetcode-cn.com/problems/shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-lcof/)
 
@@ -296,7 +296,7 @@ private ListNode merge2Lists2(ListNode l, ListNode r) {
 
 
 
-####  2020/4/27
+####  2020/4/29
 
 #### [1095. 山脉数组中查找目标值](https://leetcode-cn.com/problems/find-in-mountain-array/)
 
@@ -320,12 +320,14 @@ private ListNode merge2Lists2(ListNode l, ListNode r) {
  
 
 
+
 你将 不能直接访问该山脉数组，必须通过 MountainArray 接口来获取数据：
 
     MountainArray.get(k) - 会返回数组中索引为k 的元素（下标从 0 开始）
     MountainArray.length() - 会返回该数组的长度
 
  
+
 
 
 注意：
@@ -351,3 +353,29 @@ private ListNode merge2Lists2(ListNode l, ListNode r) {
 ```
 
 此题也是标准的二分查找题。
+
+####  2020/4/30
+
+#### [202. 快乐数](https://leetcode-cn.com/problems/happy-number/)
+
+编写一个算法来判断一个数 n 是不是快乐数。
+
+「快乐数」定义为：对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和，然后重复这个过程直到这个数变为 1，也可能是 无限循环 但始终变不到 1。如果 可以变为  1，那么这个数就是快乐数。
+
+如果 n 是快乐数就返回 True ；不是，则返回 False 。
+
+**示例：**
+
+ ```java
+输入：19
+输出：true
+解释：
+12 + 92 = 82
+82 + 22 = 68
+62 + 82 = 100
+12 + 02 + 02 = 1
+ ```
+
+> 遇到链表找环的问题，就可以采用双指针的思路，而且一些找循环也可以使用。
+>
+> 此题不要使用哈希集合取巧，开辟过多的空间，甚至可能超出空间额度。
