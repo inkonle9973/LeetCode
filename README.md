@@ -382,7 +382,22 @@ private ListNode merge2Lists2(ListNode l, ListNode r) {
 >
 > 此题不要使用哈希集合取巧，开辟过多的空间，甚至可能超出空间额度。
 
-####  2020/4/30
+####  2020/5/1
+
+#### [21. 合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/)
+
+将两个升序链表合并为一个新的升序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 
+
+**示例：**
+
+```java 
+输入：1->2->4, 1->3->4
+输出：1->1->2->3->4->4
+```
+
+> 归并排序在链表中的使用
+
+####  2020/5/2
 
 #### [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
 
