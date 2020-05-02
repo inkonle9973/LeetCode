@@ -321,12 +321,14 @@ private ListNode merge2Lists2(ListNode l, ListNode r) {
 
 
 
+
 你将 不能直接访问该山脉数组，必须通过 MountainArray 接口来获取数据：
 
     MountainArray.get(k) - 会返回数组中索引为k 的元素（下标从 0 开始）
     MountainArray.length() - 会返回该数组的长度
 
  
+
 
 
 
@@ -379,3 +381,37 @@ private ListNode merge2Lists2(ListNode l, ListNode r) {
 > 遇到链表找环的问题，就可以采用双指针的思路，而且一些找循环也可以使用。
 >
 > 此题不要使用哈希集合取巧，开辟过多的空间，甚至可能超出空间额度。
+
+####  2020/4/30
+
+#### [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
+
+给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
+
+**示例 1:**
+
+```java
+输入: "abcabcbb"
+输出: 3 
+解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
+```
+
+**示例 2:**
+
+```java
+输入: "abcabcbb"
+输出: 3 
+解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
+```
+
+**示例 3:**
+
+```java
+输入: "abcabcbb"
+输出: 3 
+解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
+```
+
+
+
+> 此题采用滑动窗口的思想，用哈希map来存取当前字符串，可见不一定非要安照字符串来使用数据结构比如数组，或者队列，做题时只需完成相应功能即可，思路要更加开阔。
