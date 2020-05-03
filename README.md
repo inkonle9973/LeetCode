@@ -322,12 +322,16 @@ private ListNode merge2Lists2(ListNode l, ListNode r) {
 
 
 
+
+
 你将 不能直接访问该山脉数组，必须通过 MountainArray 接口来获取数据：
 
     MountainArray.get(k) - 会返回数组中索引为k 的元素（下标从 0 开始）
     MountainArray.length() - 会返回该数组的长度
 
  
+
+
 
 
 
@@ -430,3 +434,23 @@ private ListNode merge2Lists2(ListNode l, ListNode r) {
 
 
 > 此题采用滑动窗口的思想，用哈希map来存取当前字符串，可见不一定非要安照字符串来使用数据结构比如数组，或者队列，做题时只需完成相应功能即可，思路要更加开阔。
+
+
+
+#### 2020/5/2**
+
+#### [53. 最大子序和](https://leetcode-cn.com/problems/maximum-subarray/)
+
+给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
+
+示例:
+```java
+输入: [-2,1,-3,4,-1,2,1,-5,4],
+输出: 6
+解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。
+
+进阶:
+如果你已经实现复杂度为 O(n) 的解法，尝试使用更为精妙的分治法求解。
+```
+
+滑动窗口，此题很有意思，我做的时候想的是下一个数是否会对maxsum产生贡献，从而无法实现连续，而题解是目前的sum对以后是否会产生增量，从而得出了结果。
