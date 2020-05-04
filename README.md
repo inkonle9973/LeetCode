@@ -1,6 +1,6 @@
 从头更新吧，之前单纯的复制题目感觉没有作用，对题目还是应该多思考一些
 
-####  2020/4/25
+##  2020/4/25
 #### 46. 全排列
 给定一个 没有重复 数字的序列，返回其所有可能的全排列。
 示例:
@@ -29,7 +29,7 @@
 
 Java 里面都是**值传递**，对于列表对象来说，复制的是 `path` 这个变量的地址，所以是值传递。也就是说add的时候确实是满着的，不过递归结束就变空了，整个过程都用的一份path。
 
-####  2020/4/26
+##  2020/4/26
 
 #### 23.[合并K个排序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/)
 
@@ -127,7 +127,7 @@ private ListNode merge2Lists2(ListNode l, ListNode r) {
 
 *4.判断时一定要注意先后顺序，如果连杯子（list）都没有，直接判断是否有水（list.size( )）,是会报NullPointerException异常的。*
 
-####  2020/4/27
+##  2020/4/27
 
 #### [33. 搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/)
 
@@ -254,7 +254,7 @@ private ListNode merge2Lists2(ListNode l, ListNode r) {
 输出: 0
 ```
 
-####  2020/4/28
+##  2020/4/28
 
 #### [56 - I. 数组中数字出现的次数](https://leetcode-cn.com/problems/shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-lcof/)
 
@@ -296,7 +296,7 @@ private ListNode merge2Lists2(ListNode l, ListNode r) {
 
 
 
-####  2020/4/29
+##  2020/4/29
 
 #### [1095. 山脉数组中查找目标值](https://leetcode-cn.com/problems/find-in-mountain-array/)
 
@@ -324,12 +324,16 @@ private ListNode merge2Lists2(ListNode l, ListNode r) {
 
 
 
+
+
 你将 不能直接访问该山脉数组，必须通过 MountainArray 接口来获取数据：
 
     MountainArray.get(k) - 会返回数组中索引为k 的元素（下标从 0 开始）
     MountainArray.length() - 会返回该数组的长度
 
  
+
+
 
 
 
@@ -360,7 +364,7 @@ private ListNode merge2Lists2(ListNode l, ListNode r) {
 
 此题也是标准的二分查找题。
 
-####  2020/4/30
+##  2020/4/30
 
 #### [202. 快乐数](https://leetcode-cn.com/problems/happy-number/)
 
@@ -386,7 +390,7 @@ private ListNode merge2Lists2(ListNode l, ListNode r) {
 >
 > 此题不要使用哈希集合取巧，开辟过多的空间，甚至可能超出空间额度。
 
-####  2020/5/1
+##  2020/5/1
 
 #### [21. 合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/)
 
@@ -401,7 +405,7 @@ private ListNode merge2Lists2(ListNode l, ListNode r) {
 
 > 归并排序在链表中的使用
 
-####  2020/5/2
+##  2020/5/2
 
 #### [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
 
@@ -437,7 +441,7 @@ private ListNode merge2Lists2(ListNode l, ListNode r) {
 
 
 
-#### 2020/5/2**
+## 2020/5/3
 
 #### [53. 最大子序和](https://leetcode-cn.com/problems/maximum-subarray/)
 
@@ -454,3 +458,27 @@ private ListNode merge2Lists2(ListNode l, ListNode r) {
 ```
 
 滑动窗口，此题很有意思，我做的时候想的是下一个数是否会对maxsum产生贡献，从而无法实现连续，而题解是目前的sum对以后是否会产生增量，从而得出了结果。
+
+
+
+## 2020/5/4
+
+#### [45. 跳跃游戏 II](https://leetcode-cn.com/problems/jump-game-ii/)
+
+给定一个非负整数数组，你最初位于数组的第一个位置。
+
+数组中的每个元素代表你在该位置可以跳跃的最大长度。
+
+你的目标是使用最少的跳跃次数到达数组的最后一个位置。
+
+**示例:**
+
+```java
+输入: [2,3,1,1,4]
+输出: 2
+解释: 跳到最后一个位置的最小跳跃数是 2。
+     从下标为 0 跳到下标为 1 的位置，跳 1 步，然后跳 3 步到达数组的最后一个位置。
+```
+
+有点类似于层序遍历，每次找到能跳到最远的位置，然后遍历此位置到能跳的最远位置中的每个位置，看在哪个位置能跳的最远更新为下一跳的位置。
+
