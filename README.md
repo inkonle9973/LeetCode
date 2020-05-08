@@ -328,12 +328,16 @@ private ListNode merge2Lists2(ListNode l, ListNode r) {
 
 
 
+
+
 你将 不能直接访问该山脉数组，必须通过 MountainArray 接口来获取数据：
 
     MountainArray.get(k) - 会返回数组中索引为k 的元素（下标从 0 开始）
     MountainArray.length() - 会返回该数组的长度
 
  
+
+
 
 
 
@@ -549,3 +553,33 @@ private ListNode merge2Lists2(ListNode l, ListNode r) {
 * s的右子树与t的右子树是否是同一颗树
 
   
+
+## 2020/5/8
+
+#### [221. 最大正方形](https://leetcode-cn.com/problems/maximal-square/)
+
+在一个由 0 和 1 组成的二维矩阵内，找到只包含 1 的最大正方形，并返回其面积。
+
+
+
+**示例:**
+
+```java
+输入: 
+
+1 0 1 0 0
+1 0 1 1 1
+1 1 1 1 1
+1 0 0 1 0
+
+输出: 4
+```
+
+这是一个动态规划的题，动态规划作为一个大类很值得研究，此题是一个dp数组为二维数组的动态规划
+
+dp模板：
+
+* 确定状态
+* 确定dp函数定义
+* 确定选择并择优：对于每个状态做出什么选择，改变当前状态（假设dp[0~i-1]已知，推出dp[i])
+* 最后确定baseline
