@@ -340,12 +340,16 @@ private ListNode merge2Lists2(ListNode l, ListNode r) {
 
 
 
+
+
 你将 不能直接访问该山脉数组，必须通过 MountainArray 接口来获取数据：
 
     MountainArray.get(k) - 会返回数组中索引为k 的元素（下标从 0 开始）
     MountainArray.length() - 会返回该数组的长度
 
  
+
+
 
 
 
@@ -680,3 +684,44 @@ dp模板：
 ```
 
 int类型的长度范围是-2147483648——2147483647，不要轻易对一个int类型取负，因为若是-2147483648取负会出问题，取负后仍是-2147483648，可以定义long类型来存取-n。
+
+## 2020/5/12
+
+#### [155. 最小栈](https://leetcode-cn.com/problems/min-stack/)
+
+设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。
+
+* push(x) —— 将元素 x 推入栈中。
+* pop() —— 删除栈顶的元素。
+* top() —— 获取栈顶元素。
+* getMin() —— 检索栈中的最小元素。
+
+
+
+**示例:**
+
+```java
+输入：
+["MinStack","push","push","push","getMin","pop","top","getMin"]
+[[],[-2],[0],[-3],[],[],[],[]]
+
+输出：
+[null,null,null,null,-3,null,0,-2]
+
+解释：
+MinStack minStack = new MinStack();
+minStack.push(-2);
+minStack.push(0);
+minStack.push(-3);
+minStack.getMin();   --> 返回 -3.
+minStack.pop();
+minStack.top();      --> 返回 0.
+minStack.getMin();   --> 返回 -2.
+```
+
+三种方法：
+
+* 辅助栈（可以选择同步的，也可选择不同步的 只有当datastack弹出的元素和minstack栈顶元素相等才弹出
+* 使用一个node（pair）作为存入栈中的元素
+* 采用链表自己定义一个栈
+
